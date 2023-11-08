@@ -6,7 +6,7 @@ import torch
 from tqdm.notebook import tqdm
 from facenet_pytorch import MTCNN
 class Detector:
-    def __init__(self, pretrained = 'MTCNN', min_face_size = 50):
+    def __init__(self, pretrained = 'MTCNN', min_face_size = 100):
         self.device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
         if pretrained == 'MTCNN':
             self.detector = MTCNN(min_face_size=min_face_size,device=self.device, post_process=True)
